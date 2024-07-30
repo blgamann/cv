@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geonwoo Shin CV</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #f8f9fa; /* Slightly off-white for a softer look */
+        --container-bg-color: #ffffff; /* Pure white for containers */
+        --text-color: #343a40; /* Dark grey for better readability */
+        --title-color: #007bff; /* Professional blue */
+        --border-color: #ced4da; /* Light grey for subtle borders */
+        --link-color: #007bff; /* Matching the title color */
+        --tech-bg-color: #e9ecef; /* Light grey background for tech elements */
+        --tech-text-color: #007bff; /* Consistent blue color */
+        --hackathon-bg-color: #f8f9fa;
+      }
+
+      .dark-mode {
+        --bg-color: #1a202c;
+        --container-bg-color: #3c4858;
+        --text-color: #e2e8f0;
+        --title-color: #9cd856; /* Changed to your main color */
+        --border-color: #4a5568;
+        --link-color: #9cd856; /* Changed to your main color */
+        --tech-bg-color: #2a4365;
+        --tech-text-color: #9cd856; /* Changed to your main color */
+        --hackathon-bg-color: #1a202c;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: var(--bg-color);
+        transition: background-color 0.3s ease;
+      }
+      .container {
+        background-color: var(--container-bg-color);
+        padding: 40px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      .description {
+        font-size: 0.9em;
+        color: var(--text-color);
+        margin-bottom: 20px;
+      }
+      h1 {
+        color: var(--title-color);
+        border-bottom: 2px solid var(--link-color);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        font-weight: 700;
+      }
+      .experience {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .experience:last-child {
+        border-bottom: none;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 10px;
+      }
+      .date {
+        font-weight: 600;
+        color: var(--text-color);
+      }
+      .company-position {
+        font-weight: 700;
+        color: var(--title-color);
+        font-size: 1.1em;
+      }
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 15px;
+      }
+      li {
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+      }
+      li::before {
+        content: "•";
+        position: absolute;
+        left: 5px;
+        color: var(--link-color);
+        font-weight: bold;
+      }
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .tech {
+        background-color: var(--tech-bg-color);
+        color: var(--tech-text-color);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        font-weight: 500;
+      }
+      .hackathon {
+        margin-bottom: 20px;
+        border-radius: 8px;
+        background-color: var(--hackathon-bg-color);
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .hackathon-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .hackathon-name {
+        font-weight: 600;
+        color: var(--text-color);
+      }
+      .hackathon-date {
+        font-size: 0.9em;
+        color: var(--text-color);
+      }
+      .project-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .project-details {
+        flex: 1;
+      }
+      .project-name {
+        font-weight: 500;
+        color: var(--text-color);
+      }
+      .project-description {
+        color: var(--text-color);
+        font-size: 0.9em;
+      }
+      .project-links {
+        margin-top: 5px;
+      }
+      .project-links a {
+        color: var(--link-color);
+        font-size: 0.9em;
+        margin-right: 10px;
+      }
+      .project-links a:hover {
+        text-decoration: underline;
+      }
+      .project-tech-stack {
+        flex: 0 0 auto;
+        text-align: right;
+      }
+      #mode-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: var(--tech-bg-color);
+        color: var(--tech-text-color);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+      }
+      #mode-toggle:hover {
+        background-color: var(--link-color);
+        color: var(--bg-color);
+      }
+      a {
+        color: var(--link-color);
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="mode-toggle">Toggle Dark Mode</button>
+    <div class="container">
+      <h1>Geonwoo Shin</h1>
+
+      <div class="experience">
+        <div class="header">
+          <span class="company-position">
+            Independent Blockchain Game Explorer
+          </span>
+          <span class="date">2024.04-2024.07</span>
+        </div>
+        <div class="description">
+          Conducted an intensive exploration to identify the most effective
+          methods of integrating blockchain technology into gaming, driven by
+          the belief that games are pivotal for mass blockchain adoption.
+        </div>
+        <ul>
+          <li>
+            Wrote <a href="https://paragraph.xyz/@blgaman">blog</a> on gaming
+            and blockchain.
+          </li>
+          <li>
+            Developed a blockchain gaming
+            <a href="https://play-to-glory.super.site/">whitepaper</a>.
+          </li>
+          <li>
+            Created
+            <a
+              href="https://www.notion.so/shingonu/Story-fa915a7624a64a76a05b93a4afd50765?pvs=4"
+              >game story</a
+            >
+            and
+            <a
+              href="https://www.notion.so/shingonu/Mechanics-27d93929dbf44e21b0520b3eb3decbec?pvs=4"
+              >mechanics</a
+            >
+            inspired by the game
+            <a href="https://gz.masanggames.co.kr/">"Gunz"</a>.
+          </li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech">L2</span>
+        </div>
+      </div>
+
+      <div class="experience">
+        <div class="header">
+          <span class="company-position">
+            <a href="https://finblocklabs.com/" style="color: inherit">
+              Finblock Labs
+            </a>
+          </span>
+          <span class="date">2023.09-2024.03</span>
+        </div>
+        <div class="description">
+          DVX is a crypto derivatives aggregator that addresses the issue of
+          isolated margins for each position and fragmented liquidity across
+          decentralized exchanges (DEXs).
+        </div>
+        <ul>
+          <li>
+            Developed
+            <a href="https://app.dvx.trading/trade?side=long&market=BTCUSD"
+              >DVX contract</a
+            >.
+          </li>
+          <li>
+            Conducted an in-depth analysis of Perpetual DEX contracts, focusing
+            on
+            <a href="https://medium.com/@blgamann/gmx-v1-f7d8fad03f35">GMX</a>
+            and
+            <a
+              href="https://docs.google.com/presentation/d/1CTuFWRONEsnpU2Nj4iqJmFxLlJsR9tdO_LK7581BjFI/edit#slide=id.p"
+              >MUX</a
+            >
+          </li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech">Solidity</span>
+          <span class="tech">Hardhat</span>
+          <span class="tech">Arbitrum</span>
+          <span class="tech">EVM</span>
+        </div>
+      </div>
+
+      <div class="experience">
+        <div class="header">
+          <span class="company-position">Multiple Hackathon Participation</span>
+          <span class="date">2023.03-2023.09</span>
+        </div>
+        <div class="description">
+          Participated in various hackathons to explore potential startup ideas
+          and build a network of like-minded team members.
+        </div>
+
+        <div class="hackathon">
+          <div class="hackathon-info">
+            <span class="hackathon-name">ETH Denver</span>
+            <span class="hackathon-date">March 2-5, 2023</span>
+          </div>
+          <div class="project-info">
+            <div class="project-details">
+              <span class="project-name">PolyJuice</span>
+              <span class="project-description"
+                >(Rental platform for multiverse NFTs)</span
+              >
+              <div class="project-links">
+                <a href="https://www.youtube.com/watch?v=lsQlHELWQJ8">Demo</a>
+                <a href="https://github.com/blgamann/PolyJuice">Github</a>
+              </div>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech">NFT</span>
+              <span class="tech">Marketplace</span>
+              <span class="tech">Rental</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hackathon">
+          <div class="hackathon-info">
+            <span class="hackathon-name"
+              ><a href="https://ethglobal.com/events/tokyo">ETH Tokyo</a></span
+            >
+            <span class="hackathon-date">April 14-16, 2023</span>
+          </div>
+          <div class="project-info">
+            <div class="project-details">
+              <span class="project-name">Invite Ape</span>
+              <span class="project-description"
+                >(Festival registration protocol, write EIP-6884)</span
+              >
+              <div class="project-links">
+                <a href="https://ethglobal.com/showcase/inviteape-f4i0e"
+                  >Demo</a
+                >
+                <a href="https://github.com/ethglobal-inviteape/inviteape"
+                  >Github</a
+                >
+                <a href="https://hackmd.io/@HxaSeEhDRX2AOjXinPg2dw/H1koMY77h"
+                  >EIP-6884</a
+                >
+              </div>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech">EIP</span>
+              <span class="tech">NFT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hackathon">
+          <div class="hackathon-info">
+            <span class="hackathon-name"
+              ><a href="https://2023.ethseoul.org/">ETH Seoul</a></span
+            >
+            <span class="hackathon-date">June 2-4, 2023</span>
+          </div>
+          <div class="project-info">
+            <div class="project-details">
+              <span class="project-name">Roam</span>
+              <span class="project-description"
+                >(Censorship-resistant video platform)</span
+              >
+              <div class="project-links">
+                <a href="https://devfolio.co/projects/roam-c361">Demo</a>
+                <a
+                  href="https://github.com/orgs/Salmon-ETH-Seoul-2023/repositories?type=source"
+                  >Github</a
+                >
+              </div>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech">Worldcoin</span>
+              <span class="tech">IPFS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hackathon">
+          <div class="hackathon-info">
+            <span class="hackathon-name"
+              ><a href="https://ethglobal.com/events/paris2023"
+                >ETH Paris</a
+              ></span
+            >
+            <span class="hackathon-date">July 21-23, 2023</span>
+          </div>
+          <div class="project-info">
+            <div class="project-details">
+              <span class="project-name">Builder Garden</span>
+              <span class="project-description"
+                >(Crowdfunding platform for next crypto builders)</span
+              >
+              <div class="project-links">
+                <a href="https://ethglobal.com/showcase/builders-garden-rfj7x"
+                  >Demo</a
+                >
+                <a
+                  href="https://github.com/orgs/ethglobal-builder-garden/repositories?type=source"
+                  >Github</a
+                >
+              </div>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech">EAS</span>
+              <span class="tech">ERC-6551</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hackathon">
+          <div class="hackathon-info">
+            <span class="hackathon-name">Seoul Web3 Festival Hackathon</span>
+            <span class="hackathon-date">July 31 - August 2, 2023</span>
+          </div>
+          <div class="project-info">
+            <div class="project-details">
+              <span class="project-name">Otter studio</span>
+              <span class="project-description"
+                >(Crowdfunding platform for documentary creators)</span
+              >
+              <div class="project-links">
+                <a href="https://www.youtube.com/watch?v=D_fBxPaBPZA">Demo</a>
+                <a
+                  href="https://github.com/orgs/SWF2023-sogeumppang/repositories?type=source"
+                  >Github</a
+                >
+              </div>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech">Shibuya</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hackathon">
+          <div class="hackathon-info">
+            <span class="hackathon-name"
+              ><a href="https://2023.ethcon.kr/">Ethcon Korea</a></span
+            >
+            <span class="hackathon-date">September 1-3, 2023</span>
+          </div>
+          <div class="project-info">
+            <div class="project-details">
+              <span class="project-name">Paprica</span>
+              <span class="project-description"
+                >(Web3 live streaming platform)
+              </span>
+              <div class="project-links">
+                <a href="https://devfolio.co/projects/paprica-a3fa">Demo</a>
+                <a
+                  href="https://github.com/search?q=owner%3Ablgamann+paprica&type=repositories"
+                  >Github</a
+                >
+              </div>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech">ERC-6551</span>
+              <span class="tech">Elixir</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience">
+        <div class="header">
+          <span class="company-position">
+            <a href="https://xociety.io/" style="color: inherit"> XOCIETY </a>
+          </span>
+          <span class="date">2022.03-2023.03</span>
+        </div>
+        <div class="description">
+          XOCIETY is a "Gaming Metaverse" based on science fantasy, combining
+          Third Person Shooters and MMORPG gameplay mechanics.
+        </div>
+        <ul>
+          <li>
+            Developed
+            <a
+              href="https://opensea.io/assets/matic/0x8fc9585896682c855f502335a5f39d584ffc4386/0"
+              >NTx contract</a
+            >.
+          </li>
+          <li>
+            Enhanced the team’s understanding of blockchain and Web3
+            technologies by analyzing various NFT projects (<a
+              href="https://davaproject.com/"
+              >Azuki</a
+            >, <a href="https://davaproject.com/">RTFKT</a>,
+            <a href="https://davaproject.com/">Dava</a>,
+            <a href="https://davaproject.com/">Otherside</a>,
+            <a href="https://www.goblintown.wtf/">Goblin Town</a>, etc.),
+            researched suitable blockchains for gaming (<a
+              href="https://www.immutable.com/"
+              >Immutable X</a
+            >, <a href="https://polygon.technology/">Polygon</a>,
+            <a href="https://www.gnosischain.com/">Gnosis Chain</a>, etc.), and
+            developed guides for NFT launches and marketplaces like OpenSea.
+            Additionally, contributed to dApp and subgraph development. Due to
+            the proprietary nature of the outputs, detailed information is
+            confidential.
+          </li>
+          <li>
+            Conducted research on
+            <a
+              href="https://medium.com/@blgamann/designing-effective-nft-launches-90a374f3fe85"
+              >NFT Launching Guide</a
+            >
+            and
+            <a
+              href="https://medium.com/twouplabs/account-abstraction-dab7c5bd0772"
+              >Account Abstraction</a
+            >
+          </li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech">NFT</span>
+          <span class="tech">Marketplace</span>
+          <span class="tech">dApp</span>
+          <span class="tech">TheGraph</span>
+          <span class="tech">Account Abstraction</span>
+        </div>
+      </div>
+
+      <div class="experience">
+        <div class="header">
+          <span class="company-position">
+            <a href="https://www.onther.io/" style="color: inherit"> Onther </a>
+          </span>
+          <span class="date">2018.03-2021.12</span>
+        </div>
+        <div class="description">
+          Onther is a research and development company specializing in Ethereum
+          blockchain technology.
+        </div>
+        <ul>
+          <li>
+            Acquired a deep understanding of Ethereum's core principles by
+            reviewing the
+            <a href="https://ethereum.github.io/yellowpaper/paper.pdf"
+              >Yellow Paper</a
+            >
+            and examining the
+            <a href="https://github.com/ethereum/go-ethereum">go-ethereum</a>
+            codebase.
+          </li>
+          <li>
+            Developed and audited various smart contract projects for external
+            clients.
+          </li>
+          <li>
+            Conducted research on Layer 2 solutions, with a focus on Optimistic
+            Rollup technologies.
+          </li>
+          <li>
+            Contributed to the development of decentralized applications (dApps)
+            and various contracts within the
+            <a href="https://www.tokamak.network/">Tokamak Network</a>.
+          </li>
+          <li>
+            Primarily focused on research related to
+            <a
+              href="https://www.notion.so/shingonu/EVM-59893473d25b4e0fa76a7369198f1ce6?pvs=4"
+              >EVM</a
+            >,
+            <a
+              href="https://www.notion.so/shingonu/go-ethereum-82c84ff75fe14bdc9c7cabb23a97b5c0?pvs=4"
+              >go-ethereum</a
+            >
+            and
+            <a
+              href="https://www.notion.so/shingonu/Optimism-62e7152b54e04ca7973a5db6d866356c?pvs=4"
+              >Optimism</a
+            >.
+          </li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech">Ethereum</span>
+          <span class="tech">go-ethereum</span>
+          <span class="tech">Solidity</span>
+          <span class="tech">L2</span>
+          <span class="tech">Optimism</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const modeToggle = document.getElementById("mode-toggle");
+      const body = document.body;
+
+      modeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        if (body.classList.contains("dark-mode")) {
+          modeToggle.textContent = "Toggle Light Mode";
+        } else {
+          modeToggle.textContent = "Toggle Dark Mode";
+        }
+      });
+    </script>
+  </body>
+</html>
