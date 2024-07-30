@@ -34,7 +34,7 @@
       }
 
       body {
-        font-family: "Inter", sans-serif;
+        font-family: "Courier New", Courier, monospace;
         line-height: 1.6;
         color: var(--text-color);
         max-width: 800px;
@@ -49,17 +49,17 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
       }
+      .contact-info {
+        margin-bottom: 60px;
+      }
       .description {
         font-size: 0.9em;
         color: var(--text-color);
         margin-bottom: 20px;
       }
       h1 {
-        color: var(--title-color);
-        border-bottom: 2px solid var(--link-color);
-        padding-bottom: 10px;
-        margin-bottom: 30px;
         font-weight: 700;
+        margin-bottom: 8px;
       }
       .experience {
         margin-bottom: 30px;
@@ -83,6 +83,12 @@
         font-weight: 700;
         color: var(--title-color);
         font-size: 1.1em;
+      }
+      h2 {
+        margin-top: 40px;
+      }
+      .detail {
+        margin-top: -10px;
       }
       ul {
         list-style-type: none;
@@ -194,11 +200,41 @@
       }
     </style>
   </head>
-  <body>
+  <body class="dark-mode">
     <button id="mode-toggle">Toggle Dark Mode</button>
     <div class="container">
       <h1>Geonwoo Shin</h1>
+      <div class="contact-info">
+        Seoul, South Korea | dn2757@gmail.com |
+        <a href="https://github.com/blgamann">Github: /blgamann</a>
+      </div>
 
+      <h2>Objective</h2>
+      <div class="detail">
+        <span
+          >Experienced Blockchain Developer with 7+ years in the field. Skilled
+          in core blockchain development, decentralized applications (DApps),
+          and end-to-end blockchain services. Committed to driving blockchain
+          innovation and creating practical, user-centric solutions. Seeking
+          opportunities to develop cutting-edge blockchain technologies that
+          push industry boundaries.</span
+        >
+      </div>
+
+      <h2>Skills</h2>
+      <div class="detail">
+        <ul>
+          <li>Experience with Ethereum protocol and other L2 technologies.</li>
+          <li>Familiarity with Smart Contract development and testing.</li>
+          <li>
+            Strong understanding of cryptography and blockchain protocols.
+          </li>
+          <li>Familiarity with front-end development.</li>
+          <li>Excellent problem-solving abilities and attention to detail.</li>
+        </ul>
+      </div>
+
+      <h2>Experience</h2>
       <div class="experience">
         <div class="header">
           <span class="company-position">
@@ -269,7 +305,7 @@
             <a
               href="https://docs.google.com/presentation/d/1CTuFWRONEsnpU2Nj4iqJmFxLlJsR9tdO_LK7581BjFI/edit#slide=id.p"
               >MUX</a
-            >
+            >.
           </li>
         </ul>
         <div class="tech-stack">
@@ -580,20 +616,45 @@
           <span class="tech">Optimism</span>
         </div>
       </div>
+
+      <h2>Activities</h2>
+      <div class="detail">
+        <ul>
+          <li><a href="https://www.ac2.kr/">AC2</a> (level1, level2)</li>
+          <li>
+            <a href="https://softwaremaestro.com/">Software Maestro</a>, 18th
+          </li>
+        </ul>
+      </div>
+
+      <h2>Education</h2>
+      <div class="detail">
+        <ul>
+          <li>
+            B.S. in Computer Science,
+            <a href="https://www.dongguk.edu/main">Dongguk University</a>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <script>
       const modeToggle = document.getElementById("mode-toggle");
       const body = document.body;
+      updateButtonText();
 
       modeToggle.addEventListener("click", () => {
         body.classList.toggle("dark-mode");
+        updateButtonText();
+      });
+
+      function updateButtonText() {
         if (body.classList.contains("dark-mode")) {
           modeToggle.textContent = "Toggle Light Mode";
         } else {
           modeToggle.textContent = "Toggle Dark Mode";
         }
-      });
+      }
     </script>
   </body>
 </html>
